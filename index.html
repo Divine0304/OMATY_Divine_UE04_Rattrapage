@@ -8,11 +8,15 @@
 </head>
 <body>
 
-    <!-- Navigation / En-tête -->
+    <!-- Header avec Logo HETIC (logo-hetic.png) -->
     <header class="site-header">
         <div class="container header-container">
-            <a href="#" class="logo">HETIC<span>.</span></a>
+            <a href="#" class="logo-link">
+                <img src="assets/images/logo-hetic.png" alt="Logo HETIC" class="site-logo">
+            </a>
+            
             <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+
             <nav class="main-nav" id="mainNav">
                 <ul>
                     <li><a href="#">L'École</a></li>
@@ -24,31 +28,62 @@
         </div>
     </header>
 
-    <!-- Banner / Hero -->
+    <!-- Hero / Bannière principale -->
     <section class="hero">
-        <div class="container">
-            <h1>Histoire d'HETIC</h1>
-            <p>Pionnière des écoles du web et du numérique depuis 2001.</p>
+        <div class="hero-banner">
+            <img src="assets/images/student-2.jpg" alt="Campus HETIC">
+            <div class="hero-overlay">
+                <h1>Histoire d'HETIC</h1>
+                <p>Pionnière des écoles du web et du numérique depuis 2001</p>
+            </div>
         </div>
     </section>
 
     <!-- Contenu Principal -->
     <main class="container">
         
-        <!-- Présentation -->
+        <!-- Section Présentation (notre-histoire.jpg) -->
         <section class="intro-section">
             <div class="intro-text">
                 <h2>Une vision novatrice de la Tech</h2>
                 <p>Créée en 2001, HETIC s'est imposée comme la grande école de l'intelligence du numérique. Sa pédagogie unique conjugue la technique, le design et le business pour former les experts de demain.</p>
             </div>
             <div class="intro-image">
-                <img src="assets/images/campus.jpg" alt="Campus HETIC">
+                <img src="assets/images/notre-histoire.jpg" alt="Étudiants HETIC en cours">
             </div>
         </section>
 
-        <!-- Timeline / Chronologie -->
+        <!-- Section Galerie d'images (remise-diplomes, pedagogie-etudiants, student-work) -->
+        <section class="history-gallery">
+            <h2>L'expérience HETIC en images</h2>
+            <div class="gallery-grid">
+                <figure class="gallery-card">
+                    <img src="assets/images/remise-diplomes.jpg" alt="Remise des diplômes">
+                    <figcaption>Cérémonie de remise des diplômes</figcaption>
+                </figure>
+                <figure class="gallery-card">
+                    <img src="assets/images/pedagogie-etudiants.jpg" alt="Travail en équipe">
+                    <figcaption>Une pédagogie axée sur le projet</figcaption>
+                </figure>
+                <figure class="gallery-card">
+                    <img src="assets/images/student-work.jpg" alt="Atelier pratique">
+                    <figcaption>Ateliers et travaux pratiques</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Section Témoignage (amandine.png) & Timeline -->
         <section class="history-timeline">
             <h2>Les dates clés de notre histoire</h2>
+            
+            <div class="author-box">
+                <img src="assets/images/amandine.png" alt="Portrait Amandine" class="avatar">
+                <div class="author-info">
+                    <p><em>« Former des esprits critiques, créatifs et capables d'anticiper les mutations du numérique. »</em></p>
+                    <strong>Amandine</strong>
+                </div>
+            </div>
+
             <div class="cards-grid">
                 <article class="timeline-card">
                     <span class="year">2001</span>
@@ -72,10 +107,13 @@
 
     </main>
 
-    <!-- Pied de page -->
+    <!-- Footer (logo-qualiopi.png) -->
     <footer class="site-footer">
         <div class="container footer-content">
             <p>&copy; 2026 HETIC - Tous droits réservés.</p>
+            <div class="footer-certif">
+                <img src="assets/images/logo-qualiopi.png" alt="Certification Qualiopi" class="logo-qualiopi">
+            </div>
         </div>
     </footer>
 
