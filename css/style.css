@@ -59,6 +59,7 @@ img {
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    position: relative; /* Repère pour le menu mobile absolu */
 }
 
 /* 2. Logo */
@@ -140,7 +141,7 @@ img {
 .btn-outline {
     border: 1px solid #ffffff;
     background-color: transparent;
-    color: #ffffff ;
+    color: #ffffff;
     padding: 0.6rem 1.2rem;
     border-radius: 2px;
     display: inline-block;
@@ -520,6 +521,7 @@ img {
     flex-shrink: 0;
 }
 
+/* Bouton RDV Footer + survol */
 .btn-rdv {
     display: inline-block;
     border: 1px solid var(--cyan-primary);
@@ -645,18 +647,52 @@ img {
     opacity: 0.8;
 }
 
-/* Responsivité Mobile */
+/* Responsivité Mobile & Menu Burger */
 @media (max-width: 900px) {
     .content-grid, .news-grid, .info-grid, .cta-flex, .cta-right-grid, .footer-top, .footer-links-wrapper, .links-columns {
         grid-template-columns: 1fr;
     }
 
-    .main-nav {
-        display: none;
-    }
-
     .menu-toggle {
         display: block;
+    }
+
+    /* Le menu est masqué par défaut sur mobile */
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #111111;
+        padding: 2rem 1.5rem;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Style quand la classe .open est activée au clic */
+    .main-nav.open {
+        display: block !important;
+    }
+
+    /* Organisation des liens en colonne */
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+    }
+
+    .main-nav a {
+        font-size: 1rem;
+        color: #ffffff !important;
+    }
+
+    /* Adaptation si la navbar est scrollée */
+    .site-header.scrolled .main-nav {
+        background-color: #ffffff;
+    }
+
+    .site-header.scrolled .main-nav a {
+        color: #111111 !important;
     }
 
     .info-card h4 {
