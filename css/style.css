@@ -44,6 +44,7 @@ img {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* État lors du scroll : fond blanc et ombre douce */
 .site-header.scrolled {
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -61,8 +62,13 @@ img {
     transition: filter 0.3s;
 }
 
+/* Inversion du logo au repos sur fond sombre */
 .site-header:not(.scrolled) .site-logo {
     filter: brightness(0) invert(1);
+}
+
+.site-header.scrolled .site-logo {
+    filter: none;
 }
 
 .main-nav ul {
@@ -72,37 +78,76 @@ img {
     gap: 1.2rem;
 }
 
+/* Liens de navigation au repos (blanc) */
 .main-nav a {
     text-decoration: none;
     color: #ffffff;
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.5px;
+    transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
+.main-nav a:hover {
+    color: var(--cyan-primary);
+}
+
+/* Liens lors du scroll (texte sombre) */
 .site-header.scrolled .main-nav a {
     color: var(--text-dark);
 }
 
-.event-link a {
+.site-header.scrolled .main-nav a:hover {
+    color: var(--cyan-primary);
+}
+
+/* Lien Portes Ouvertes (toujours cyan) */
+.event-link a,
+.site-header.scrolled .event-link a {
     color: var(--cyan-primary) !important;
 }
 
+/* --- Bouton "Je candidate" --- */
 .btn-cyan {
     background-color: var(--cyan-primary);
+    color: #111111 !important;
+    padding: 0.61rem 1.2rem;
+    border-radius: 2px;
+    border: 1px solid var(--cyan-primary);
+    display: inline-block;
+    font-weight: 600;
+}
+
+/* Survol de "Je candidate" (Bordure cyan & fond transparent) */
+.btn-cyan:hover,
+.site-header.scrolled .btn-cyan:hover {
+    background-color: transparent !important;
+    color: #111111 !important;
+    border: 1px solid var(--cyan-primary) !important;
+}
+
+/* --- Bouton "Brochure" --- */
+.btn-outline {
+    border: 1px solid #ffffff;
+    background-color: transparent;
     color: #ffffff !important;
     padding: 0.6rem 1.2rem;
     border-radius: 2px;
-}
-
-.btn-outline {
-    border: 1px solid #ffffff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 2px;
+    display: inline-block;
+    font-weight: 600;
 }
 
 .site-header.scrolled .btn-outline {
-    border-color: var(--text-dark);
+    border-color: #111111;
+    color: #111111 !important;
+}
+
+/* Survol de "Brochure" (Fond noir / sombre) */
+.btn-outline:hover,
+.site-header.scrolled .btn-outline:hover {
+    background-color: #222222 !important;
+    border-color: #222222 !important;
+    color: #ffffff !important;
 }
 
 .menu-toggle {
@@ -301,6 +346,12 @@ img {
     padding: 0.4rem 0.8rem;
     font-size: 0.8rem;
     display: inline-block;
+    transition: all 0.25s ease;
+}
+
+.btn-outline-white:hover {
+    background-color: var(--cyan-primary);
+    color: #111111;
 }
 
 /* --- Blocs Informations Pratiques --- */
@@ -445,13 +496,21 @@ img {
     flex-shrink: 0;
 }
 
+/* Bouton RDV Footer + survol */
 .btn-rdv {
     display: inline-block;
     border: 1px solid var(--cyan-primary);
+    background-color: transparent;
     color: #ffffff;
     text-decoration: none;
     padding: 0.6rem 1.2rem;
     font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.btn-rdv:hover {
+    background-color: var(--cyan-primary);
+    color: #111111;
 }
 
 .footer-contact-col .phone {
@@ -476,6 +535,11 @@ img {
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
     background: #181818;
+    transition: background 0.25s ease;
+}
+
+.btn-gmaps:hover {
+    background: #2a2a2a;
 }
 
 .footer-divider {
@@ -508,6 +572,7 @@ img {
 .links-columns a {
     color: #aaaaaa;
     text-decoration: none;
+    transition: color 0.2s;
 }
 
 .links-columns a:hover {
